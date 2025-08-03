@@ -25,6 +25,11 @@ description.write("Hello, welcome to my toolbox! " \
 "Thank you for checking my page out!")
 
 t = st.container(border=True)
-t.subheader("Tools:")
-t.link_button(label="Password Generator", url="https://mitchware-passwordgenerator.streamlit.app/")
-t.link_button(label="QR Code Generator", url="https://mitchware-qr-code-generator.streamlit.app/")
+tools, applications = t.columns(2)
+with tools:
+    st.subheader("Tools:")
+    st.link_button(label="Password Generator", url="https://mitchware-passwordgenerator.streamlit.app/")
+    st.link_button(label="QR Code Generator", url="https://mitchware-qr-code-generator.streamlit.app/")
+with applications:
+    st.subheader("Applications:")
+    st.link_button(label="RepRange", url="https://reprange.streamlit.app/")
